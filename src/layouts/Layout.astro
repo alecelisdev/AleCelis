@@ -19,8 +19,23 @@ import "../styles/global.css";
 			name="generator"
 			content={Astro.generator}
 		/>
-		<title>Astro Basics</title>
+		<title>Ale Celis - El futuro de tu negocio</title>
 	</head>
+	<!-- Google tag (gtag.js) -->
+	<script
+		is:inline
+		async
+		src="https://www.googletagmanager.com/gtag/js?id=G-Y07HGWZYB9"
+	></script>
+	<script is:inline>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag("js", new Date());
+
+		gtag("config", "G-Y07HGWZYB9");
+	</script>
 	<body>
 		<slot />
 	</body>

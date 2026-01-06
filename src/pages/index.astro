@@ -36,7 +36,7 @@ import Layout from "../layouts/Layout.astro";
 				>
 					Soluciones digitales
 					<span
-						class="block"
+						class="block animate-bounce-in-down"
 						style="color: #42D392;"
 						>para tu negocio</span
 					>
@@ -111,12 +111,42 @@ import Layout from "../layouts/Layout.astro";
 		}
 	}
 
+	@keyframes bounceInDown {
+		0% {
+			transform: translateY(-3000px);
+			animation-timing-function: ease-in;
+			opacity: 0;
+		}
+		60% {
+			transform: translateY(25px);
+			animation-timing-function: ease-out;
+			opacity: 1;
+		}
+		75% {
+			transform: translateY(-10px);
+			animation-timing-function: ease-in;
+		}
+		90% {
+			transform: translateY(5px);
+			animation-timing-function: ease-out;
+		}
+		100% {
+			transform: translateY(0);
+			animation-timing-function: ease-in;
+		}
+	}
+
 	.animate-fade-in-up {
 		animation: fade-in-up 0.8s ease-out forwards;
 	}
 
 	.animate-blob {
 		animation: blob 7s infinite;
+	}
+
+	.animate-bounce-in-down {
+		animation: bounceInDown 1s both;
+		animation-delay: 0.3s;
 	}
 
 	.animation-delay-500 {

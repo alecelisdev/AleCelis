@@ -1,0 +1,74 @@
+---
+import { SERVICES } from "../config/site.config";
+
+// SVG icons inline por servicio
+const icons: Record<string, string> = {
+  monitor: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+  </svg>`,
+  bot: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><line x1="12" y1="7" x2="12" y2="11"/>
+    <line x1="8" y1="15" x2="8" y2="17"/><line x1="16" y1="15" x2="16" y2="17"/>
+  </svg>`,
+  chart: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+    <line x1="2" y1="20" x2="22" y2="20"/>
+  </svg>`,
+};
+---
+
+<section id="servicios" class="py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Section header -->
+    <div class="reveal mb-16 text-center">
+      <span class="text-xs font-semibold tracking-widest uppercase text-[var(--accent)] mb-3 block">Servicios</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-[var(--text-primary)]">
+        {SERVICES.sectionTitle}
+      </h2>
+    </div>
+
+    <!-- Cards: horizontal scroll on mobile, 3-col grid on desktop -->
+    <div class="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible pb-4 md:pb-0 snap-x snap-mandatory md:snap-none -mx-6 px-6 md:mx-0 md:px-0">
+      {SERVICES.items.map((item, index) => (
+        <article
+          class="reveal snap-start min-w-[80vw] sm:min-w-[60vw] md:min-w-0 flex-shrink-0 md:flex-shrink relative group rounded-xl border border-[var(--bg-border)] bg-[var(--bg-surface)] p-6 hover:border-[var(--accent)] transition-all duration-300 flex flex-col"
+          style={`transition-delay: ${index * 0.1}s;`}
+        >
+          <!-- Icon -->
+          <div class="w-12 h-12 rounded-lg flex items-center justify-center mb-5 text-[var(--accent)] border border-[var(--bg-border)] group-hover:border-[var(--accent)] group-hover:bg-[color-mix(in_srgb,var(--accent)_10%,transparent)] transition-all duration-300">
+            <div class="w-6 h-6" set:html={icons[item.icon]} />
+          </div>
+
+          <!-- Title -->
+          <h3 class="text-lg font-bold text-[var(--text-primary)] mb-3 leading-snug">
+            {item.title}
+          </h3>
+
+          <!-- Description -->
+          <p class="text-sm text-[var(--text-muted)] leading-relaxed mb-6 flex-1">
+            {item.description}
+          </p>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2">
+            {item.tags.map((tag) => (
+              <span class="inline-block px-2.5 py-1 rounded-md text-xs font-medium border border-[var(--bg-border)] text-[var(--text-subtle)]">
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <!-- Accent line on hover -->
+          <div class="absolute bottom-0 left-0 right-0 h-0.5 rounded-b-xl bg-[var(--accent)] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Scroll indicator for mobile -->
+    <div class="flex md:hidden items-center justify-center gap-2 mt-6" aria-hidden="true">
+      {SERVICES.items.map((_, i) => (
+        <div class={`w-1.5 h-1.5 rounded-full ${i === 0 ? "bg-[var(--accent)]" : "bg-[var(--bg-border)]"}`}></div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,64 @@
+---
+interface Props {
+  class?: string;
+  height?: number;
+}
+const { class: className = "", height = 36 } = Astro.props;
+---
+
+<!--
+  Logo SVG — AleCelis
+  Versión adaptable: usa currentColor para la tinta principal (blanco en dark, negro en light)
+  El acento esmeralda (#42D392) es fijo.
+-->
+<svg
+  class={className}
+  height={height}
+  viewBox="0 0 288 52"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-label="AleCelis"
+  role="img"
+>
+  <!-- ── Monograma AC ───────────────────────────────────────── -->
+
+  <!-- A: pierna izquierda -->
+  <polygon points="0,52 9,52 26,4 17,4" fill="currentColor" />
+  <!-- A: pierna derecha -->
+  <polygon points="17,52 26,52 43,4 34,4" fill="currentColor" />
+  <!-- A: barra acento esmeralda -->
+  <polygon points="7,35 9,28 34,28 36,35" fill="#42D392" />
+
+  <!-- C: barra superior -->
+  <rect x="50" y="4" width="30" height="8" fill="currentColor" />
+  <!-- C: barra izquierda vertical -->
+  <rect x="50" y="4" width="9" height="44" fill="currentColor" />
+  <!-- C: barra inferior -->
+  <rect x="50" y="44" width="30" height="8" fill="currentColor" />
+
+  <!-- ── Wordmark: AleCelis ──────────────────────────────────── -->
+  <!-- "Ale" -->
+  <text
+    x="96"
+    y="44"
+    font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
+    font-weight="700"
+    font-size="38"
+    fill="currentColor"
+    letter-spacing="-0.5">Ale</text
+  >
+  <!-- "C" en Celis — empieza en x≈185 aprox, ajustar si cambia el font -->
+  <text
+    x="185"
+    y="44"
+    font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
+    font-weight="700"
+    font-size="38"
+    fill="currentColor"
+    letter-spacing="-0.5">Celis</text
+  >
+
+  <!-- Punto verde sobre la "i" de Celis (posición aproximada) -->
+  <!-- TODO: ajustar x si el rendering del font varía -->
+  <circle cx="262" cy="8" r="4" fill="#42D392" />
+</svg>

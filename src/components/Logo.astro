@@ -1,0 +1,95 @@
+---
+/**
+ * Logo SVG — AleCelis
+ * Basado en el archivo original logo-claro-transparente.svg
+ * - fill="currentColor" para todos los paths → responde al tema (negro/blanco)
+ * - El tercer path (barra diagonal dentro de la A del monograma) usa fill="#42D392"
+ * - Círculo esmeralda sobre la "i" de Celis añadido manualmente
+ * TODO: ajustar cx/cy del círculo de la "i" si el rendering varía entre browsers
+ */
+interface Props {
+  class?: string;
+  height?: number;
+}
+const { class: className = "", height = 36 } = Astro.props;
+---
+
+<svg
+  class={className}
+  height={height}
+  viewBox="0 0 702 243"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-label="AleCelis"
+  role="img"
+  preserveAspectRatio="xMidYMid meet"
+>
+  <g
+    transform="translate(0,243) scale(0.1,-0.1)"
+    stroke="none"
+  >
+    <!-- Wordmark: C (en Celis) -->
+    <path fill="currentColor" d="M4141 1560 c-105 -22 -194 -96 -225 -187 -22 -64 -23 -362 -1 -422
+49 -140 187 -215 352 -191 105 15 165 51 207 123 20 34 52 155 43 162 -1 1
+-30 5 -64 8 l-61 7 -7 -43 c-14 -84 -56 -131 -129 -148 -110 -24 -203 37 -226
+148 -18 84 -9 287 15 333 38 75 83 103 165 103 103 0 149 -40 174 -155 6 -25
+11 -28 44 -28 20 0 48 3 61 7 22 5 23 10 18 54 -19 160 -188 266 -366 229z"/>
+
+    <!-- Monograma: cuerpo principal de la A y C -->
+    <path fill="currentColor" d="M1020 1378 c-208 -458 -270 -598 -270 -608 0 -6 28 -10 69 -10 68 0
+69 0 81 33 7 17 39 87 72 154 32 68 58 127 58 133 0 20 134 310 143 307 4 -1
+23 -36 41 -77 106 -239 229 -508 242 -528 l15 -22 277 2 277 3 0 130 0 130
+-62 3 -63 3 0 -71 0 -70 -175 2 -176 3 -154 330 -155 330 -68 3 -69 3 -83
+-183z"/>
+
+    <!-- Acento esmeralda — barra diagonal dentro de la A del monograma -->
+    <path fill="#42D392" d="M1421 1488 l-33 -72 34 -74 c18 -41 37 -75 41 -76 5 0 24 36 44 82
+l35 82 179 0 179 0 0 -70 0 -71 63 3 62 3 0 130 0 130 -286 3 -286 2 -32 -72z"/>
+
+    <!-- Wordmark: A (en AleCelis) -->
+    <path fill="currentColor" d="M2618 1552 c-54 -1 -98 -5 -98 -7 0 -4 -49 -167 -179 -598 -28 -92
+-51 -170 -51 -172 0 -3 29 -5 65 -5 l64 0 20 68 c11 37 23 79 27 95 l6 27 153
+0 154 0 16 -57 c9 -32 21 -75 27 -95 l11 -38 64 0 c44 0 63 4 63 13 0 24 -223
+752 -234 762 -6 6 -53 9 -108 7z m71 -282 c28 -96 51 -181 51 -188 0 -9 -30
+-12 -115 -12 -63 0 -115 2 -115 4 0 5 98 352 106 375 9 27 21 -4 73 -179z"/>
+
+    <!-- Wordmark: l (en Ale) -->
+    <path fill="currentColor" d="M3047 1554 c-4 -4 -7 -182 -7 -396 l0 -388 59 0 59 0 7 63 c3 34 5
+211 3 392 l-3 330 -55 3 c-31 2 -59 0 -63 -4z"/>
+
+    <!-- Wordmark: l (en Celis) -->
+    <path fill="currentColor" d="M5235 1548 c-3 -7 -4 -184 -3 -393 l3 -380 60 0 60 0 0 390 0 390
+-58 3 c-40 2 -59 -1 -62 -10z"/>
+
+    <!-- Wordmark: e (en Ale) -->
+    <path fill="currentColor" d="M3475 1331 c-47 -12 -108 -47 -137 -78 -49 -52 -68 -108 -68 -209 0
+-81 3 -98 28 -145 31 -60 93 -113 150 -129 61 -17 181 -12 227 9 45 20 83 54
+110 95 20 31 16 37 -41 59 l-40 15 -38 -39 c-80 -81 -215 -61 -260 40 -34 73
+-33 74 197 70 l202 -4 -1 70 c-1 106 -45 180 -137 226 -42 22 -145 33 -192 20z
+m158 -123 c24 -17 57 -71 57 -93 0 -3 -67 -5 -149 -5 l-150 0 10 29 c13 36 58
+79 95 91 41 13 102 3 137 -22z"/>
+
+    <!-- Wordmark: e (en Celis) -->
+    <path fill="currentColor" d="M4787 1326 c-70 -19 -125 -63 -161 -126 -29 -51 -31 -62 -31 -155 0
+-92 2 -104 29 -153 34 -60 91 -107 151 -123 22 -6 76 -9 121 -7 65 3 90 10
+127 31 41 25 97 87 97 110 0 4 -21 17 -47 28 l-46 20 -32 -35 c-69 -75 -175
+-77 -243 -4 -29 32 -46 89 -29 100 6 4 100 5 208 2 l196 -6 6 23 c12 43 -13
+147 -47 197 -57 85 -190 129 -299 98z m160 -112 c25 -16 48 -48 57 -80 6 -20
+2 -22 -66 -28 -39 -3 -105 -3 -146 0 -73 7 -73 7 -67 33 21 82 147 125 222 75z"/>
+
+    <!-- Wordmark: s (en Celis) -->
+    <path fill="currentColor" d="M5895 1331 c-118 -21 -189 -116 -154 -208 23 -62 70 -92 176 -113
+110 -22 152 -39 159 -67 16 -62 -48 -102 -142 -88 -50 7 -104 49 -104 79 0 17
+-33 21 -89 10 -29 -6 -32 -10 -26 -33 12 -51 53 -98 106 -125 46 -22 66 -26
+144 -26 78 0 99 4 143 26 72 36 96 77 90 154 -3 44 -10 66 -27 84 -30 32 -100
+61 -186 76 -89 16 -123 33 -131 67 -17 68 119 103 185 47 17 -14 31 -33 31
+-41 0 -13 10 -14 58 -8 31 4 59 9 61 11 2 2 -7 25 -20 50 -42 82 -157 126
+-274 105z"/>
+
+    <!-- Wordmark: i stem (en Celis) -->
+    <path fill="currentColor" d="M5490 1045 l0 -275 60 0 60 0 0 275 0 275 -60 0 -60 0 0 -275z"/>
+
+    <!-- Punto esmeralda sobre la "i" de Celis -->
+    <!-- TODO: ajustar cy si el rendering del font varía entre browsers -->
+    <circle cx="5520" cy="1680" r="55" fill="#42D392"/>
+  </g>
+</svg>

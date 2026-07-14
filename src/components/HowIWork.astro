@@ -1,0 +1,45 @@
+---
+import { HOW_I_WORK } from "../config/site.config";
+---
+
+<section id="como-trabajo" class="py-24 border-t border-[var(--bg-border)]">
+  <div class="max-w-3xl mx-auto px-6">
+    <!-- Section header -->
+    <div class="reveal mb-16 text-center">
+      <span class="text-xs font-semibold tracking-widest uppercase text-[var(--accent)] mb-3 block">Proceso</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-[var(--text-primary)]">
+        {HOW_I_WORK.sectionTitle}
+      </h2>
+    </div>
+
+    <!-- Steps -->
+    <div class="relative">
+      <!-- Connecting line -->
+      <div
+        class="absolute left-7 top-8 bottom-8 w-px bg-[var(--bg-border)]"
+        aria-hidden="true"
+      ></div>
+
+      <ol class="space-y-10">
+        {HOW_I_WORK.steps.map((step, index) => (
+          <li class="reveal relative flex gap-8" style={`transition-delay: ${index * 0.12}s;`}>
+            <!-- Number bubble -->
+            <div class="relative z-10 flex-shrink-0 w-14 h-14 rounded-full border-2 border-[var(--bg-border)] bg-[var(--bg)] flex items-center justify-center group-hover:border-[var(--accent)] transition-colors duration-300">
+              <span class="text-sm font-bold" style="color: var(--accent);">{step.number}</span>
+            </div>
+
+            <!-- Content -->
+            <div class="pt-3 pb-2">
+              <h3 class="text-lg font-bold text-[var(--text-primary)] mb-2">
+                {step.title}
+              </h3>
+              <p class="text-sm text-[var(--text-muted)] leading-relaxed">
+                {step.description}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>

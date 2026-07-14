@@ -1,0 +1,123 @@
+---
+import Logo from "./Logo.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+import { SITE, NAV } from "../config/site.config";
+
+const waUrl = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.whatsappMessage)}`;
+---
+
+<header
+  id="nav"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+>
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
+
+    <!-- Logo -->
+    <a href="/" aria-label="Ale Celis — inicio">
+      <Logo height={28} class="text-[var(--text-primary)]" />
+    </a>
+
+    <!-- Desktop nav links -->
+    <nav class="hidden md:flex items-center gap-8" aria-label="Navegación principal">
+      {NAV.links.map((link) => (
+        <a
+          href={link.href}
+          class="text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors duration-200"
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- Right side: theme toggle + CTA -->
+    <div class="flex items-center gap-3">
+      <ThemeToggle />
+      <a
+        href={waUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold bg-[var(--accent)] text-[#0a0a0a] hover:bg-[var(--accent-hover)] transition-colors duration-200"
+      >
+        {NAV.cta}
+      </a>
+
+      <!-- Mobile menu button -->
+      <button
+        id="mobile-menu-btn"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-[var(--text-primary)] hover:bg-[var(--bg-surface)] transition-colors duration-200"
+      >
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div
+    id="mobile-menu"
+    class="md:hidden hidden border-t border-[var(--bg-border)] bg-[var(--bg)]"
+  >
+    <nav class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-4">
+      {NAV.links.map((link) => (
+        <a
+          href={link.href}
+          class="mobile-menu-link text-base font-medium text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors duration-200 py-1"
+        >
+          {link.label}
+        </a>
+      ))}
+      <a
+        href={waUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-2 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm font-semibold bg-[var(--accent)] text-[#0a0a0a] hover:bg-[var(--accent-hover)] transition-colors duration-200"
+      >
+        {NAV.cta}
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  (function () {
+    var header = document.getElementById("nav");
+    var btn = document.getElementById("mobile-menu-btn");
+    var menu = document.getElementById("mobile-menu");
+
+    // Scroll: add backdrop blur + border when scrolled
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 20) {
+        header.style.backgroundColor = "color-mix(in srgb, var(--bg) 85%, transparent)";
+        header.style.backdropFilter = "blur(12px)";
+        header.style.webkitBackdropFilter = "blur(12px)";
+        header.style.borderBottom = "1px solid var(--bg-border)";
+      } else {
+        header.style.backgroundColor = "";
+        header.style.backdropFilter = "";
+        header.style.webkitBackdropFilter = "";
+        header.style.borderBottom = "";
+      }
+    });
+
+    // Mobile menu toggle
+    if (btn && menu) {
+      btn.addEventListener("click", function () {
+        var open = menu.classList.toggle("hidden");
+        btn.setAttribute("aria-expanded", String(!open));
+      });
+
+      // Close on link click
+      menu.querySelectorAll(".mobile-menu-link").forEach(function (link) {
+        link.addEventListener("click", function () {
+          menu.classList.add("hidden");
+          btn.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+  })();
+</script>

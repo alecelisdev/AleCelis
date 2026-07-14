@@ -1,0 +1,21 @@
+---
+import { SOCIAL_PROOF } from "../config/site.config";
+---
+
+<section class="py-12 border-y border-[var(--bg-border)]">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="text-center text-xs font-medium tracking-widest uppercase text-[var(--text-subtle)] mb-8">
+      {SOCIAL_PROOF.label}
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+      {SOCIAL_PROOF.logos.map((logo) => (
+        <div class="grayscale opacity-40 hover:opacity-70 hover:grayscale-0 transition-all duration-300">
+          <!-- TODO: reemplazar con <img> o SVG del logo real -->
+          <div class="h-8 px-5 rounded border border-[var(--bg-border)] flex items-center justify-center">
+            <span class="text-sm font-semibold tracking-wide text-[var(--text-muted)]">{logo.name}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

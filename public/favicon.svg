@@ -1,15 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Fondo oscuro redondeado -->
   <rect width="32" height="32" rx="7" fill="#0a0a0a"/>
-  <!-- A: pierna izquierda -->
-  <polygon points="2,27 6,27 14,5 10,5" fill="white"/>
-  <!-- A: pierna derecha -->
-  <polygon points="10,27 14,27 22,5 18,5" fill="white"/>
-  <!-- A: barra acento esmeralda -->
-  <polygon points="4.5,19 5.5,15 20.5,15 21.5,19" fill="#42D392"/>
-  <!-- C: barra superior -->
-  <rect x="24" y="5" width="6" height="3.5" rx="0.5" fill="white"/>
-  <!-- C: barra vertical izquierda -->
-  <rect x="24" y="5" width="3" height="22" rx="0.5" fill="white"/>
-  <!-- C: barra inferior -->
-  <rect x="24" y="23.5" width="6" height="3.5" rx="0.5" fill="white"/>
+  <!--
+    Monograma AC escalado al viewport 32x32.
+    Fuente original: primeros dos paths del logo (paths 2 y 3).
+    Transform original: translate(0,243) scale(0.1,-0.1) sobre viewBox 702x243.
+    Aquí ajustamos al espacio 32x32 tomando solo la zona del monograma (x: 62-200, y: 40-200).
+  -->
+  <g transform="translate(2, 31) scale(0.018, -0.018)" stroke="none">
+    <!-- Cuerpo del monograma A+C -->
+    <path fill="white" d="M1020 1378 c-208 -458 -270 -598 -270 -608 0 -6 28 -10 69 -10 68 0
+69 0 81 33 7 17 39 87 72 154 32 68 58 127 58 133 0 20 134 310 143 307 4 -1
+23 -36 41 -77 106 -239 229 -508 242 -528 l15 -22 277 2 277 3 0 130 0 130
+-62 3 -63 3 0 -71 0 -70 -175 2 -176 3 -154 330 -155 330 -68 3 -69 3 -83
+-183z"/>
+    <!-- Acento esmeralda -->
+    <path fill="#42D392" d="M1421 1488 l-33 -72 34 -74 c18 -41 37 -75 41 -76 5 0 24 36 44 82
+l35 82 179 0 179 0 0 -70 0 -71 63 3 62 3 0 130 0 130 -286 3 -286 2 -32 -72z"/>
+  </g>
 </svg>

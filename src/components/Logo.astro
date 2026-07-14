@@ -5,7 +5,8 @@
  * - fill="currentColor" para todos los paths → responde al tema (negro/blanco)
  * - El tercer path (barra diagonal dentro de la A del monograma) usa fill="#42D392"
  * - Círculo esmeralda sobre la "i" de Celis añadido manualmente
- * TODO: ajustar cx/cy del círculo de la "i" si el rendering varía entre browsers
+ * - viewBox ajustado al bounding box real del dibujo (el original 0 0 702 243
+ *   tenía ~60% de espacio vacío vertical y el logo se veía diminuto)
  */
 interface Props {
   class?: string;
@@ -17,7 +18,7 @@ const { class: className = "", height = 36 } = Astro.props;
 <svg
   class={className}
   height={height}
-  viewBox="0 0 702 243"
+  viewBox="71 82 553 90"
   xmlns="http://www.w3.org/2000/svg"
   aria-label="AleCelis"
   role="img"
@@ -89,7 +90,6 @@ m158 -123 c24 -17 57 -71 57 -93 0 -3 -67 -5 -149 -5 l-150 0 10 29 c13 36 58
     <path fill="currentColor" d="M5490 1045 l0 -275 60 0 60 0 0 275 0 275 -60 0 -60 0 0 -275z"/>
 
     <!-- Punto esmeralda sobre la "i" de Celis -->
-    <!-- TODO: ajustar cy si el rendering del font varía entre browsers -->
-    <circle cx="5520" cy="1680" r="55" fill="#42D392"/>
+    <circle cx="5550" cy="1450" r="55" fill="#42D392"/>
   </g>
 </svg>

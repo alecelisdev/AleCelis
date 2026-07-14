@@ -1,16 +1,18 @@
 // Archivo central de configuración — edita aquí todos los textos del sitio
 
+import imgDominga from "../assets/projects/terraza-dona-dominga.jpg";
+import imgKinesioVital from "../assets/projects/kinesiovital.jpg";
+import imgValeBeauty from "../assets/projects/vale-beauty-studio.jpg";
+
 export const SITE = {
   name: "Ale Celis",
   tagline: "Tecnología que trabaja para tu negocio. Tú te dedicas a lo que importa.",
-  // TODO: reemplazar con número de WhatsApp real (formato: código de país + número sin +)
-  whatsapp: "56912345678",
-  whatsappMessage: "Hola, me interesa saber más sobre tus servicios",
-  // TODO: reemplazar con email real
-  email: "hola [at] alecelis [punto] com",
+  whatsapp: "56966192139",
+  whatsappMessage: "Hola, me interesa que me ayudes a mejorar mi negocio..",
+  email: "alecelisdev@gmail.com",
   // TODO: reemplazar con URLs reales
-  linkedin: "https://linkedin.com/in/alecelis",
-  github: "https://github.com/alecelis",
+  linkedin: "https://www.linkedin.com/in/alejandro-gonzalez-celis/",
+  github: "https://github.com/alecelisdev",
   gtag: "G-Y07HGWZYB9",
 };
 
@@ -25,7 +27,7 @@ export const NAV = {
 };
 
 export const HERO = {
-  headline1: "Tecnología que genera resultados.",
+  headline1: "Tu negocio puede trabajar mejor.",
   headline2: "No código. No herramientas. Resultados.",
   subheadline:
     "Desarrollo webs, automatizaciones e inteligencia artificial para negocios que necesitan crecer sin contratar más gente.",
@@ -35,13 +37,10 @@ export const HERO = {
 
 export const SOCIAL_PROOF = {
   label: "Negocios que ya confían en este trabajo",
-  // TODO: reemplazar con nombres/logos reales
   logos: [
-    { name: "Empresa A" },
-    { name: "Empresa B" },
-    { name: "Empresa C" },
-    { name: "Empresa D" },
-    { name: "Empresa E" },
+    { name: "Terraza Doña Dominga" },
+    { name: "KinesioVital" },
+    { name: "Vale Beauty Studio" },
   ],
 };
 
@@ -53,7 +52,7 @@ export const SERVICES = {
       icon: "monitor",
       title: "Tu negocio visible y vendiendo",
       description:
-        "Diseño y desarrollo sitios web y ecommerce que posicionan en Google y convierten visitas en clientes. No solo una página bonita — una herramienta que trabaja 24/7.",
+        "Diseño y desarrollo sitios web y tiendas online que aparecen en Google cuando te buscan y convierten visitas en clientes. No solo una página bonita — una herramienta que vende 24/7.",
       tags: ["Landing pages", "Portfolios", "Tiendas online", "Páginas corporativas"],
     },
     {
@@ -61,7 +60,7 @@ export const SERVICES = {
       icon: "bot",
       title: "Menos tareas manuales. Más tiempo para lo que importa.",
       description:
-        "Automatizo los procesos que te quitan horas: respuestas de WhatsApp con IA, flujos de trabajo, integraciones entre sistemas. Tu equipo deja de hacer trabajo repetitivo.",
+        "Automatizo lo que te quita horas cada semana: responder WhatsApp, pasar datos de un sistema a otro, tareas repetitivas. Ese tiempo vuelve a ti y a tu equipo.",
       tags: ["Agente de WhatsApp con IA", "Automatización de procesos", "Creación de anuncios con IA"],
     },
     {
@@ -69,7 +68,7 @@ export const SERVICES = {
       icon: "chart",
       title: "Entiende tu negocio. Decide con información.",
       description:
-        "Construyo dashboards y sistemas de visualización para que veas en tiempo real qué está pasando en tu negocio. Sin Excel. Sin adivinar.",
+        "Construyo paneles que te muestran en tiempo real qué está pasando en tu negocio: qué se vende, qué no, dónde se va la plata. Sin Excel. Sin adivinar.",
       tags: ["Dashboards de gestión", "Reportes automatizados", "KPIs en tiempo real"],
     },
   ],
@@ -82,7 +81,7 @@ export const HOW_I_WORK = {
       number: "01",
       title: "Me cuentas tu problema",
       description:
-        "No me expliques qué herramienta quieres. Cuéntame qué te está costando dinero o tiempo. Una llamada de 30 minutos, sin costo, sin compromiso.",
+        "No me expliques qué herramienta quieres. Cuéntame qué te está costando dinero o tiempo. Conversemos, sin costo, sin compromiso.",
     },
     {
       number: "02",
@@ -106,27 +105,32 @@ export const HOW_I_WORK = {
 };
 
 export const PROJECTS = {
-  sectionTitle: "Casos reales. Resultados reales.",
+  sectionTitle: "Casos reales. Puedes visitarlos.",
   ctaText: "¿Tu proyecto podría ser el próximo?",
-  // TODO: reemplazar con proyectos e imágenes reales
   items: [
     {
-      title: "Proyecto Ecommerce",
-      category: "Web · E-commerce",
-      result: "Lanzado y vendiendo desde el día 7",
-      image: null,
+      title: "Terraza Doña Dominga",
+      category: "Web · Reservas online",
+      description:
+        "Restobar en Mallarauco con shows de artistas en vivo. Reservas, cartelera de eventos y venta de entradas, todo conectado a WhatsApp.",
+      url: "https://doniadominga.vercel.app/",
+      image: imgDominga,
     },
     {
-      title: "Dashboard Operativo",
-      category: "Automatización · Datos",
-      result: "Eliminó 15 horas semanales de trabajo manual",
-      image: null,
+      title: "KinesioVital",
+      category: "Web · Salud",
+      description:
+        "Clínica de kinesiología y rehabilitación. Agendamiento de horas integrado y preguntas frecuentes que reducen consultas repetitivas por WhatsApp.",
+      url: "https://alegonzalezcelis.github.io/Clinical-Web/",
+      image: imgKinesioVital,
     },
     {
-      title: "Agente WhatsApp IA",
-      category: "IA · Automatización",
-      result: "Responde 200+ consultas al mes sin intervención humana",
-      image: null,
+      title: "Vale Beauty Studio",
+      category: "Web · Belleza",
+      description:
+        "Estudio de extensiones de pestañas, lifting coreano y cejas. Catálogo de servicios con precios y agenda de citas directo por WhatsApp.",
+      url: "https://vale-beauty-studio.vercel.app/",
+      image: imgValeBeauty,
     },
   ],
 };
@@ -134,7 +138,7 @@ export const PROJECTS = {
 export const CONTACT = {
   sectionTitle: "¿Listo para que tu negocio trabaje mejor?",
   subtitle:
-    "Agenda una llamada de 30 minutos. Sin costo. Sin presión. Solo conversamos sobre tu negocio y vemos si puedo ayudarte.",
+    "Agenda una llamada o una reunión de 30 minutos. Sin costo. Sin presión. Solo conversamos sobre tu negocio y vemos si puedo ayudarte.",
   ctaText: "Agendar llamada por WhatsApp",
 };
 

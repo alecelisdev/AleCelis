@@ -3,6 +3,8 @@
 import imgDominga from "../assets/projects/terraza-dona-dominga.jpg";
 import imgKinesioVital from "../assets/projects/kinesiovital.jpg";
 import imgValeBeauty from "../assets/projects/vale-beauty-studio.jpg";
+import imgTesoreria from "../assets/about/tesorería-nacional.png";
+import imgAle from "../assets/about/ale-celis.jpeg";
 
 export const SITE = {
   name: "Ale Celis",
@@ -18,9 +20,10 @@ export const SITE = {
 
 export const NAV = {
   links: [
-    { label: "Servicios", href: "#servicios" },
-    { label: "Cómo trabajo", href: "#como-trabajo" },
     { label: "Proyectos", href: "#proyectos" },
+    { label: "Servicios", href: "#servicios" },
+    { label: "Sobre mí", href: "#sobre-mi" },
+    { label: "Cómo trabajo", href: "#como-trabajo" },
     { label: "Contacto", href: "#contacto" },
   ],
   cta: "Hablemos",
@@ -28,10 +31,10 @@ export const NAV = {
 
 export const HERO = {
   headline1: "Tu negocio puede trabajar mejor.",
-  headline2: "No código. No herramientas. Resultados.",
+  headline2: "Más ventas, menos trabajo manual.",
   subheadline:
-    "Desarrollo webs, automatizaciones e inteligencia artificial para negocios que necesitan crecer sin contratar más gente.",
-  ctaPrimary: "Quiero resultados",
+    "Desarrollo webs, Asistentes de IA y automatizaciones para negocios que necesitan crecer sin contratar más gente.",
+  ctaPrimary: "Quiero más clientes",
   ctaSecondary: "Ver proyectos",
 };
 
@@ -68,40 +71,47 @@ export const SERVICES = {
       icon: "chart",
       title: "Entiende tu negocio. Decide con información.",
       description:
-        "Construyo paneles que te muestran en tiempo real qué está pasando en tu negocio: qué se vende, qué no, dónde se va la plata. Sin Excel. Sin adivinar.",
+        "Construyo paneles que te muestran en tiempo real qué está pasando en tu negocio: qué se vende, qué no, dónde se va la plata. Reemplazan la planilla que hoy nadie actualiza.",
       tags: ["Dashboards de gestión", "Reportes automatizados", "KPIs en tiempo real"],
     },
   ],
 };
 
 export const HOW_I_WORK = {
-  sectionTitle: "De conversación a resultados, en semanas",
+  sectionTitle: "Así avanza un proyecto conmigo",
   steps: [
     {
       number: "01",
-      title: "Me cuentas tu problema",
+      title: "Me cuentas qué te está costando plata o tiempo",
       description:
-        "No me expliques qué herramienta quieres. Cuéntame qué te está costando dinero o tiempo. Conversemos, sin costo, sin compromiso.",
+        "Sin jerga técnica de tu parte: cuéntame el problema, no la solución que crees que necesitas — para eso estoy yo. Conversamos gratis y sin compromiso.",
     },
     {
       number: "02",
-      title: "Te presento la solución",
+      title: "Te muestro qué se puede hacer, en cuánto tiempo y a qué precio",
       description:
-        "Antes de que decidas algo, tienes sobre la mesa: qué se va a hacer, en cuánto tiempo y a qué precio fijo. Sin sorpresas. Si no tiene sentido para tu negocio, te lo digo antes.",
+        "Precio fijo, sobre la mesa, antes de que decidas algo. Si tu proyecto resulta más simple de lo que pensabas, te lo digo antes de cobrarte de más.",
     },
     {
       number: "03",
-      title: "Construimos juntos",
+      title: "Construyo, muestro avances cada pocos días, y quedamos operando",
       description:
-        "No desaparezco semanas. Cada pocos días ves el avance, opinas y ajustamos. Cuando lanzamos, ya sabías exactamente qué esperar.",
-    },
-    {
-      number: "04",
-      title: "Lanzamos y medimos",
-      description:
-        "El lanzamiento es el inicio, no el final. Revisamos qué funciona, qué hay que ajustar y cómo seguir escalando.",
+        "No desaparezco hasta el final ni te dejo solo después del lanzamiento. Ajustamos juntos hasta que el resultado funcione de verdad.",
     },
   ],
+};
+
+export const ABOUT = {
+  sectionTitle: "Sobre mí",
+  name: "Alejandro Celis",
+  portrait: imgAle,
+  portraitAlt: "Alejandro González Celis, desarrollador freelance",
+  paragraphs: [
+    `Soy Alejandro Celis (Ale). Me dedico a construir tecnología para negocios que necesitan resolver algo concreto — no "tener una web" o "tener un chatbot" porque sí, sino resolver lo que hoy les cuesta tiempo, clientes o plata.`,
+    `Antes de construir para otros, construyo para mí: soy tesorero de un club de fútbol amateur, y estoy desarrollando mi propia app de gestión de tesorería para resolver el mismo control manual en planillas y WhatsApp que probablemente vives en tu negocio.`,
+  ],
+  closingParagraph:
+    "Ese criterio — entender el problema real antes de construir — es el que aplico en cada proyecto. ",
 };
 
 export const PROJECTS = {
@@ -132,13 +142,22 @@ export const PROJECTS = {
       url: "https://vale-beauty-studio.vercel.app/",
       image: imgValeBeauty,
     },
+    {
+      title: "Tesorería Club Deportivo Nacional",
+      category: "App · Gestión (en desarrollo)",
+      description:
+        "Mi propio proyecto: soy tesorero de este club amateur y estoy construyendo la app que reemplaza el control manual en planillas y WhatsApp. Saldo en caja, ingresos y gastos por partido, todo en un panel.",
+      url: undefined,
+      image: imgTesoreria,
+      note: "En desarrollo activo, todavía sin control de acceso — por eso no está disponible en vivo.",
+    },
   ],
 };
 
 export const CONTACT = {
   sectionTitle: "¿Listo para que tu negocio trabaje mejor?",
   subtitle:
-    "Agenda una llamada o una reunión de 30 minutos. Sin costo. Sin presión. Solo conversamos sobre tu negocio y vemos si puedo ayudarte.",
+    "Agenda una llamada de 30 minutos, gratis. Conversamos sobre tu negocio y vemos honestamente si puedo ayudarte.",
   ctaText: "Agendar llamada por WhatsApp",
 };
 

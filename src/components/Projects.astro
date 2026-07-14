@@ -22,7 +22,7 @@ const waUrl = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.wha
           class="reveal group rounded-xl border border-[var(--bg-border)] bg-[var(--bg-surface)] overflow-hidden hover:border-[var(--accent)] transition-all duration-300"
           style={`transition-delay: ${index * 0.1}s;`}
         >
-          {project.image ? (
+          {project.image && project.url ? (
             <a
               href={project.url}
               target="_blank"
@@ -39,6 +39,20 @@ const waUrl = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.wha
                 loading="lazy"
               />
             </a>
+          ) : project.image ? (
+            <div class="relative aspect-video overflow-hidden border-b border-[var(--bg-border)]">
+              <Image
+                src={project.image}
+                alt={`Captura de ${project.title}`}
+                widths={[400, 800]}
+                sizes="(min-width: 1024px) 380px, (min-width: 768px) 50vw, 100vw"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md text-xs font-semibold bg-[var(--bg)]/90 border border-[var(--bg-border)] text-[var(--text-muted)]">
+                En desarrollo
+              </span>
+            </div>
           ) : (
             <div class="relative aspect-video bg-[var(--bg)] flex items-center justify-center overflow-hidden border-b border-[var(--bg-border)]">
               <div class="absolute inset-0 opacity-5">
@@ -73,17 +87,23 @@ const waUrl = `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(SITE.wha
               {project.description}
             </p>
 
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-1 text-sm font-medium text-[var(--accent)] hover:gap-2 transition-all duration-200"
-            >
-              Ver el sitio
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
-              </svg>
-            </a>
+            {project.url ? (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-sm font-medium text-[var(--accent)] hover:gap-2 transition-all duration-200"
+              >
+                Ver el sitio
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </a>
+            ) : (
+              <p class="text-xs text-[var(--text-subtle)] leading-relaxed">
+                {project.note}
+              </p>
+            )}
           </div>
         </article>
       ))}

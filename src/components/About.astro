@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+import { ABOUT } from "../config/site.config";
+---
+
+<section id="sobre-mi" class="py-24 border-t border-[var(--bg-border)]">
+  <div class="max-w-5xl mx-auto px-6">
+    <!-- Section header -->
+    <div class="reveal mb-16 text-center">
+      <span class="text-xs font-semibold tracking-widest uppercase text-[var(--accent)] mb-3 block">Sobre mí</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-[var(--text-primary)]">
+        {ABOUT.sectionTitle}
+      </h2>
+    </div>
+
+    <div class="reveal grid grid-cols-1 md:grid-cols-[320px_1fr] gap-10 md:gap-14 md:items-start">
+      {ABOUT.portrait && (
+        <div class="rounded-xl overflow-hidden border border-[var(--bg-border)] shadow-lg w-full max-w-xs mx-auto md:max-w-none md:mx-0 h-64 md:h-80">
+          <Image
+            src={ABOUT.portrait}
+            alt={ABOUT.portraitAlt}
+            width={640}
+            height={800}
+            class="w-full h-full object-cover"
+          />
+        </div>
+      )}
+
+      <div class="space-y-6 text-[var(--text-muted)] leading-relaxed">
+        {ABOUT.paragraphs.map((paragraph) => {
+          const parts = paragraph.split(ABOUT.name);
+          return parts.length === 2 ? (
+            <p>
+              {parts[0]}<strong class="font-semibold text-[var(--text-primary)]">{ABOUT.name}</strong>{parts[1]}
+            </p>
+          ) : (
+            <p>{paragraph}</p>
+          );
+        })}
+
+        <p>{ABOUT.closingParagraph}</p>
+      </div>
+    </div>
+  </div>
+</section>

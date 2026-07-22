@@ -1,6 +1,6 @@
 // Archivo central de configuración — edita aquí todos los textos del sitio
 
-import imgDominga from "../assets/projects/terraza-dona-dominga.jpg";
+import imgDominga from "../assets/projects/terraza-dona-dominga.png";
 import imgKinesioVital from "../assets/projects/kinesiovital.jpg";
 import imgValeBeauty from "../assets/projects/vale-beauty-studio.jpg";
 import imgTesoreria from "../assets/about/tesorería-nacional.png";

@@ -123,7 +123,7 @@ export const PROJECTS = {
       category: "Web · Reservas online",
       description:
         "Restobar en Mallarauco con shows de artistas en vivo. Reservas, cartelera de eventos y venta de entradas, todo conectado a WhatsApp.",
-      url: "https://doniadominga.vercel.app/",
+      url: "https://www.xn--terrazadoadominga-nxb.cl",
       image: imgDominga,
     },
     {
